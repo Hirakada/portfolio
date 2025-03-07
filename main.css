@@ -245,49 +245,6 @@ footer a:hover {
     font-weight: bold;
 }
 
-.social-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    background-color: #f0f0f0;
-    color: #1b1b1c;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: small;
-    font-weight: bold;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: width 0.3s ease-in-out, border-radius 0.3s ease-in-out;
-    overflow: hidden;
-    position: relative;
-    white-space: nowrap;
-    padding: 0 10px;
-}
-
-.social-button .iconify {
-    font-size: 24px;
-    transition: margin 0.3s ease-in-out;
-}
-
-.social-button .button-text {
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    margin-left: 10px;
-}
-
-.social-button:hover {
-    width: 150px;
-    border-radius: 25px;
-    justify-content: flex-start;
-    padding: 0 15px;
-}
-
-.social-button:hover .button-text {
-    opacity: 1;
-}
-
 /* Footer style */
 footer {
     bottom: 0;
