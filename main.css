@@ -99,6 +99,67 @@ h1.name{
     padding: 10px;
 }
 
+.banner .social-list{
+    width: fit-content;
+    display: flex;
+    gap: 20px;
+}
+
+.social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    font-weight: 550;
+}
+
+.social-button:hover {
+    width: 130px;
+    border-radius: 50px;
+    justify-content: center;
+    padding-left: 8px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+.social-button .iconify {
+    font-size: 32px;
+    transition: transform 0.3s ease-in-out, left 0.3s ease-in-out;
+    z-index: 2;
+}
+
+.social-button:hover .iconify {
+    transform: translate(-135%, 0px) rotate(360deg);
+}
+
+.button-text {
+    margin-left: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    white-space: nowrap;
+    position: absolute;
+    z-index: 1;
+}
+
+.social-button:hover .button-text {
+    opacity: 1;
+    transform: translateX(8px);
+}
+
+.social-button:not(:hover) {
+    transition: all 0.3s ease-in-out;
+}
+
 /* Footer styling */
 footer {
     bottom: 0;
