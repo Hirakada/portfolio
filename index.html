@@ -6,7 +6,6 @@
     <title>Hirakada</title>
     <link rel="stylesheet" href="./main.css">
     <link rel="icon" href="$">
-    <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
 </head>
 <body class="begin">
     <header class="hirakada-header">
@@ -24,25 +23,27 @@
     <main class="hirakada-main">
         <div class="main-content">
             <div class="banner">
-                <img src="" alt="">
                 <div class="home-container">
                     <div class="greeting">
                         <h3 class="greeting">Welcome, I'm your conductor,</h3>
-                        <h1 class="name">HIRAKADA</h1>
+                        <h1 class="name">H<span class="auto-type"></span></h1>
                     </div>
                     <p>How can I help you?</p>
                     <div class="social-list">
                         <button type="button" class="social-button" id="linkedin">
-                            <span class="iconify" data-icon="mdi:linkedin" data-inline="false"></span>
-                            <span class="button-text">hirakada</span>
+                            <a href="https://linkedin.com/in/hirakada/">
+                                <span class="iconify" data-icon="mdi:linkedin" data-inline="false"></span>
+                            </a>
                         </button>
                         <button type="button" class="social-button" id="instagram">
-                            <span class="iconify" data-icon="mdi:instagram" data-inline="false"></span>
-                            <span class="button-text">hirakada</span>
+                            <a href="https://instagram.com/hirakada/">
+                                <span class="iconify" data-icon="mdi:instagram" data-inline="false"></span>
+                            </a>
                         </button>
                         <button type="button" class="social-button" id="github">
-                            <span class="iconify" data-icon="mdi:github" data-inline="false"></span>
-                            <span class="button-text">Hirakada</span>
+                            <a href="https://github.com/Hirakada">
+                                <span class="iconify" data-icon="mdi:github" data-inline="false"></span>
+                            </a>
                         </button>
                     </div>
                 </div>
@@ -51,14 +52,21 @@
     </main>
     <footer class="hirakada-footer">
         <div class="footer-content">
-            <div class="footer-social">
-                <ul class="social-list">
-                    <li class="item" id="linkedin"><a href="https://linkedin.com/in/hirakada/">LinkedIn</a></li>
-                    <li class="item" id="instagram"><a href="https://instagram.com/hirakada/">Instagram</a></li>
-                    <li class="item" id="git"><a href="https://github.com/Hirakada">GitHub</a></li>
-                </ul>
-            </div>
         </div>
     </footer>
+
+    <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed(".auto-type", {
+          strings: ["IRAKADA", "izkya Raka Priananda"],
+          typeSpeed: 80,
+          backSpeed: 50,
+          backDelay: 1000,
+          loop: true,
+          showCursor: false     
+        });
+      </script>
 </body>
 </html>
