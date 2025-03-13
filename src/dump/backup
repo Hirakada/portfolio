@@ -1,0 +1,66 @@
+<div class="form">
+    <form action="submit">
+        <input type="text" name="name" placeholder="Name">
+        <input type="text" name="email" placeholder="Email" required>
+        <input type="date" name="date">
+        <div class="radio">
+            <label id="male">
+                <input type="radio" id="male" name="gender" value="Male">
+                Male
+            </label>
+            <label id="female">
+                <input type="radio" id="female" name="gender" value="Female">
+                Female
+            </label>
+        </div>
+        <div class="checkbox">
+            <input type="checkbox" name="tos" required>
+            <label for="checkbox">Term of Condition</label>
+        </div>
+        <button type="submit" class="regular-button">Submit</button>
+    </form>
+</div>
+
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 20vw;
+}
+
+form input {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--button-default);
+    color: var(--text-secondary);
+}
+
+input[type="date"] {
+    position: relative;
+    color: var(--text-secondary);
+}
+
+input[type="date"]::-webkit-clear-button,
+input[type="date"]::-webkit-inner-spin-button {
+    display: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+}
+
+.radio {
+    display: flex;
+    gap: 10px;
+}
+
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js" defer></script>
+<script src="./static/js/auto-type.js" defer></script>
