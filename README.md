@@ -16,6 +16,3 @@ This is my personal portfolio website, showcasing my projects, skills, and profe
 - **Frontend:** HTML, CSS, JavaScript
 - **Frameworks/Libraries:** GitHub, Iconify
 - **Deployment:** GitHub Pages
-
-## License
-This project is licensed under the [MIT License](LICENSE).
