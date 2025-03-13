@@ -136,6 +136,14 @@ h3.greeting {
     gap: 18px;
 }
 
+.line {
+    border: none;
+    height: 2.25px;
+    background: var(--accent-light-red);
+    width: clamp(300px, 30%, 600px);
+    border-radius: 5px;
+  }
+
 .start {
     display: flex;
     flex-direction: column;
@@ -143,28 +151,8 @@ h3.greeting {
     align-items: center;
     gap: 12px;
 }
-
-.regular-button {
-    padding: 10px 24px;
-    border: 1px solid var(--border-color);
-    border-radius: 50px;
-    font-weight: 400;
-    background-color: var(--button-default);
-    color: var(--text-primary);
-    font-size: 16px;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    box-shadow: var(--shadow-soft);
-}
-
-.regular-button:hover {
-    background-color: var(--button-hover);
-    box-shadow: var(--shadow-strong);
-    transform: translateY(-2px);
-}
-
-.regular-button:active {
-    background-color: var(--button-active);
-    transform: scale(0.98);
+#start {
+    display: none;
 }
 
 /* Social Buttons */
@@ -175,7 +163,7 @@ h3.greeting {
     border: none;
     font-size: 24px;
     padding: 8px;
-    transition: color 0.2s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    transition: var(--quick-transition);
 }
 
 .social-button a {
@@ -193,6 +181,14 @@ h3.greeting {
 
 .social-button:hover a {
     color: var(--accent-light-red);
+}
+
+#drive a{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
 }
 
 /* Introduction */

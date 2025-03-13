@@ -19,6 +19,9 @@
     --shadow-strong: 0px 6px 12px rgba(231, 57, 70, 0.4);
 
     --border-color: #444444;
+
+    --gentle-transition: all .8s cubic-bezier(0.47, 0, 0.23, 1.38);
+    --quick-transition: all .3s cubic-bezier(0.47, 0, 0.23, 1.38);
 }
 
 * {
@@ -30,6 +33,11 @@
 a,
 button {
     cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 body {
@@ -67,4 +75,31 @@ p {
     display: inline-block;
     white-space: nowrap;
     animation: scroll-left 10s linear infinite; /* Apply the scrolling animation */
+}
+
+.regular-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 24px;
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    font-weight: 400;
+    background-color: var(--button-default);
+    color: var(--text-primary);
+    font-size: 16px;
+    transition: var(--quick-transition);
+    box-shadow: var(--shadow-soft);
+}
+
+.regular-button:hover {
+    background-color: var(--button-hover);
+    box-shadow: var(--shadow-strong);
+    transform: translateY(-2px);
+}
+
+.regular-button:active {
+    background-color: var(--button-active);
+    transform: scale(0.98);
 }
