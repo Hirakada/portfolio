@@ -74,7 +74,7 @@ p {
 .temporary span {
     display: inline-block;
     white-space: nowrap;
-    animation: scroll-left 10s linear infinite; /* Apply the scrolling animation */
+    animation: scroll-left 10s linear infinite;
 }
 
 .regular-button {
