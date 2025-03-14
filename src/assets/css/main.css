@@ -4,7 +4,6 @@
     position: relative;
 }
 
-
 #back {
     display: flex;
     align-items: center;
@@ -13,8 +12,8 @@
     left: 50%;
     width: 32px;
     height: 32px;
-    padding: 8px;
-    font-size: 24px;
+    padding: 0.5rem;
+    font-size: 1.5rem;
     border: 2px solid var(--text-secondary);
     border-radius: 100%;
     background-color: var(--button-default);
@@ -32,7 +31,7 @@
 
 #back:active {
     background-color: var(--button-active);
-    transform: translate(-50%, 0.98);
+    transform: translate(-50%, 1px);
 }
 
 #back.show {
@@ -51,21 +50,22 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 2% 10%;
-    font-size: small;
+    font-size: 0.875rem;
     font-weight: 450;
     height: var(--header-height);
+    width: 100%;
 }
 
 .logo img {
     width: auto;
-    height: 18px;
+    height: 1.125rem;
 }
 
 .menu-list {
     display: flex;
     align-items: center;
-    justify-content: end;
-    gap: 12px;
+    justify-content: flex-end;
+    gap: 0.75rem;
 }
 
 nav ul {
@@ -77,6 +77,7 @@ nav a {
     color: var(--text-primary);
     cursor: pointer;
     font-weight: 600;
+    font-size: 1rem;
 }
 
 nav a:hover {
@@ -98,23 +99,14 @@ main {
 }
 
 
-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    flex-wrap: wrap;
-    padding: 0% 10%;
-    width: 100%;
-}
-
 .name {
     color: var(--accent-red);
+    font-size: 1.5rem;
 }
 
 #first {
     min-height: calc(100vh - var(--header-height));
-    gap: 30px;
+    gap: 1.875rem;
     width: 100%;
 }
 
@@ -128,29 +120,32 @@ section {
 h3.greeting {
     font-weight: 600;
     color: var(--text-primary);
+    font-size: 1.25rem;
 }
 
 .social-list {
     width: fit-content;
     display: flex;
-    gap: 18px;
+    gap: 1.125rem;
 }
 
 .line {
+    display: none;
     border: none;
-    height: 2.25px;
+    height: 1.25px;
     background: var(--accent-light-red);
-    width: clamp(300px, 30%, 600px);
-    border-radius: 5px;
-  }
+    width: clamp(18.75rem, 30%, 37.5rem);
+    border-radius: 1rem;
+}
 
 .start {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 12px;
+    gap: 0.75rem;
 }
+
 #start {
     display: none;
 }
@@ -159,67 +154,86 @@ h3.greeting {
 .social-button {
     display: flex;
     align-items: center;
+    justify-content: center;
     background-color: transparent;
     border: none;
-    font-size: 24px;
-    padding: 8px;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: relative;
+    transition: var(--quick-transition);
+    color: var(--text-primary);
+}
+
+/* Minimalist underline effect */
+.social-button::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background-color: var(--accent-light-red);
     transition: var(--quick-transition);
 }
 
-.social-button a {
-    display: flex;
-    color: var(--text-primary);
-    width: fit-content;
-    height: fit-content;
-    font-size: 24px;
+.social-button:hover::after {
+    width: 100%;
+    left: 0;
 }
 
+/* Hover effects */
 .social-button:hover {
-    box-shadow: 0 2px var(--accent-light-red);
-    transform: translateY(-2px);
-}
-
-.social-button:hover a {
+    transform: translateY(-2px) scale(1.05);
     color: var(--accent-light-red);
 }
 
-#drive a{
+#drive a {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 12px;
+    gap: 0.75rem;
 }
 
-/* Introduction */
 #introduction {
     display: flex;
-    min-height: 100dvh;
+    min-height: 100vh;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 2rem;
+    padding: 0 10%;
 }
 
 #introduction .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex: 1 1 30%;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
 }
 
+#introduction .show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Profile Section */
+
 #profile {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     position: relative;
+    flex: 1 1 30%;
 }
 
 .frame {
     width: 200px;
     aspect-ratio: 2/3;
-    border-radius: 30px;
+    border-radius: 1.875rem;
     border: 2px solid var(--text-primary);
     position: absolute;
-    box-sizing: border-box;
     z-index: -1;
     transform: translate(-50%, -50px);
 }
@@ -227,7 +241,7 @@ h3.greeting {
 #photo {
     overflow: hidden;
     aspect-ratio: 1 / 1;
-    width: clamp(200px, 50%, 600px) ;
+    width: clamp(12.5rem, 50%, 37.5rem);
 }
 
 #profile img {
@@ -236,14 +250,80 @@ h3.greeting {
     width: 100%;
 }
 
-.group {
+/* Biodata Section */
+#biodata {
     display: flex;
     flex-direction: column;
-    border-radius: 10px;
-    padding: clamp(15px, 5%, 30px);;
-    box-sizing: border-box;
+    justify-content: center;
+    flex: 1 1 50%;
+    max-width: 600px;
+    
 }
 
+/* Introduction Title */
+#group1 {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.content {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+
+/* Personal Details */
 #group2 {
-    background-color: var(--background-end);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem 1rem;
+    align-items: start;
+    background: #171719;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    padding: 1rem;
+    max-width: 600px;
+    width: 100%;
+    margin: auto;
+}
+
+#group2 p {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.625rem;
+    margin: 0;
+    font-size: 1rem;
+}
+
+#group2 .iconify {
+    font-size: 1.25rem;
+    color: var(--accent-red);
+}
+
+/* Education Section */
+.education {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.sub-info {
+    padding-left: 1.875rem;
+    color: var(--text-light);
+    font-size: 0.875rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+ 
 }
