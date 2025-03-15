@@ -27,15 +27,15 @@
     --shadow-strong: 0 0.375rem 1.125rem rgba(0, 0, 0, 0.2);
     
     /* Transitions */
-    --gentle-transition: all 0.8s cubic-bezier(0.47, 0, 0.23, 1.38);
-    --quick-transition: all 0.3s ease-in-out;
+    --gentle-transition: 0.8s cubic-bezier(0.47, 0, 0.23, 1.38);
+    --quick-transition: 0.3s ease-in-out;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* outline: 1px solid red; */
+    outline: 1px solid red;
 }
 
 a, button {
@@ -80,6 +80,23 @@ section {
     min-height: 100vh;
     max-height: none;
     overflow: visible;
+}
+
+@keyframes appearOnScroll {
+    from {
+        opacity: 0;
+        scale: 0.5;
+    }
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+section {
+    animation: appearOnScroll linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
 }
 
 p {
