@@ -35,7 +35,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
 }
 
 a, button {
@@ -52,6 +52,7 @@ html, body {
     min-height: 100vh;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 body {
@@ -118,32 +119,28 @@ p {
 
 /* Scrolling Banner */
 .temporary {
-    left: 0;
     width: 100%;
-    height: auto;
+    height: 5vh;
     padding: 1vh 0;
     z-index: 1000;
     background-color: var(--accent-red);
     box-shadow: var(--shadow-strong);
     overflow: hidden;
     color: var(--text-primary);
-    text-align: center;
-
+    position: relative;
 }
 
 .temporary span {
-    display: inline-block;
     white-space: nowrap;
+    left: 100%;
     animation: scroll-left 10s linear infinite;
     font-size: 1rem;
+    position: absolute;
 }
 
 @keyframes scroll-left {
-    0% {
-        transform: translateX(100vw);
-    }
-    100% {
-        transform: translateX(-100%);
+    to {
+        transform: translateX(calc(-100% - 100vw));
     }
 }
 
