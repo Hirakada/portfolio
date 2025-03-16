@@ -38,6 +38,10 @@
     /* outline: 1px solid red; */
 }
 
+p {
+    font-size: 1rem;
+}
+
 a, button {
     cursor: pointer;
 }
@@ -52,7 +56,7 @@ html, body {
     min-height: 100vh;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 body {
@@ -79,8 +83,11 @@ section {
     padding: 0 10%;
     width: 100%;
     min-height: 100vh;
-    max-height: none;
-    overflow: visible;
+    position: relative;
+
+    animation: appearOnScroll linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
 }
 
 @keyframes appearOnScroll {
@@ -92,16 +99,6 @@ section {
         opacity: 1;
         scale: 1;
     }
-}
-
-section {
-    animation: appearOnScroll linear;
-    animation-timeline: view();
-    animation-range: entry 0% cover 40%;
-}
-
-p {
-    font-size: 1rem;
 }
 
 /* Glassmorphism Effect */

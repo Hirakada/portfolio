@@ -4,11 +4,12 @@
     position: relative;
 }
 
-#back {
+/* #back {
     display: flex;
     align-items: center;
     position: absolute;
-    top: calc((var(--header-height)) + 100vh);
+    top: calc(var(--header-height) + 15px);
+    top: calc((var(--header-height)) + 100vh + 30px);
     left: 50%;
     width: 32px;
     height: 32px;
@@ -18,10 +19,14 @@
     border-radius: 100%;
     background-color: var(--button-default);
     color: var(--text-primary);
-    opacity: 1;
     transform: translateX(-50%);
-    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
     z-index: 1000;
+    opacity: 0;
+    transition: opacity var(--gentle-transition), transform var(--quick-transition);
+
+    animation: showBack linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 20%; 
 }
 
 #back:hover {
@@ -43,22 +48,28 @@
         opacity: 1;
         transform: translate(-50%, 0);
     }
-}
+} 
 
-#back {
-    animation: showBack linear;
-    animation-timeline: view();
-    animation-range: entry 0% cover 20%;
-}
-/* #back.show {
+#back.show {
     transform: translate(-50%, 0);
     opacity: 1;
+    position: fixed;
+    top: 2rem;
 }
 
 #back.hide {
     transform: translate(-50%, -50px);
     opacity: 0;
-} */
+} 
+
+#back.fixed {
+    position: fixed;
+    top: calc(var(--header-height) + 15px); 
+    left: 2rem; 
+    opacity: 1; 
+    transform: translateY(0);
+}     */
+ 
 
 /* Header */
 header {
@@ -118,6 +129,7 @@ main {
 .name {
     color: var(--accent-red);
     font-size: 1.5rem;
+    text-align: center;
 }
 
 #first {
@@ -212,30 +224,25 @@ h3.greeting {
     gap: 0.75rem;
 }
 
+
 #introduction {
-    display: flex;
-    min-height: 100vh;
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
     gap: 2rem;
-    padding: 0 10%;
 }
 
 /* #introduction .container {
-    /* opacity: 0; 
+    opacity: 0; 
     transform: translateY(50px);
     transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
-}
+} */
 
-#introduction .show {
+/* #introduction .show {
     opacity: 1;
     transform: translateY(0);
 } */
 
 /* Profile Section */
-
 #profile {
     display: flex;
     flex-direction: column;
